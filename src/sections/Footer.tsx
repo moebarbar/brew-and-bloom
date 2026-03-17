@@ -268,27 +268,19 @@ const Footer = () => {
             className="border-t border-kaleo-cream/10 py-12 md:py-16"
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-              <svg
-                viewBox="0 0 1200 100"
-                className="w-full max-w-4xl mx-auto h-auto opacity-20"
-                fill="currentColor"
+            <div className="overflow-hidden">
+              <p
+                className="text-center text-kaleo-cream opacity-20 select-none"
+                style={{
+                  fontFamily: 'Cormorant Garamond, serif',
+                  letterSpacing: '0.05em',
+                  fontSize: 'clamp(4rem, 13vw, 12rem)',
+                  lineHeight: 1,
+                  whiteSpace: 'nowrap',
+                }}
               >
-                <text
-                  x="50%"
-                  y="50%"
-                  dominantBaseline="middle"
-                  textAnchor="middle"
-                  className="font-display"
-                  style={{
-                    fontSize: '72px',
-                    fontFamily: 'Cormorant Garamond, serif',
-                    letterSpacing: '0.05em'
-                  }}
-                >
-                  {footerConfig.logoText}
-                </text>
-              </svg>
+                {footerConfig.logoText}
+              </p>
             </div>
           </div>
         )}
