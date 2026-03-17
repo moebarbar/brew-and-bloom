@@ -270,7 +270,7 @@ const Footer = () => {
           >
             <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
               <svg
-                viewBox="0 0 400 80"
+                viewBox="0 0 1200 100"
                 className="w-full max-w-4xl mx-auto h-auto opacity-20"
                 fill="currentColor"
               >
