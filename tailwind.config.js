@@ -40,7 +40,7 @@ module.exports = {
         },
         // KALEO Custom Colors
         kaleo: {
-          sand: '#EAE4D9',
+          sand: '#F0E4CC',
           charcoal: '#1C1C1C',
           earth: '#2A2A2A',
           cream: '#F3F0EB',
