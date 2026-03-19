@@ -26,24 +26,26 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
     gsap.set([logo, tagline], { y: 40, opacity: 0 });
     gsap.set(line, { scaleX: 0, transformOrigin: 'left center' });
 
-    const tl = gsap.timeline({
-      delay: 0.1,
-      onComplete: () => {
-        gsap.to([panel1, panel2], {
-          yPercent: -100,
-          duration: 1.1,
-          ease: 'power4.inOut',
-          stagger: 0.08,
-          onComplete,
-        });
-      },
-    });
+    const tl = gsap.timeline({ delay: 0.1 });
 
     tl
       .to(line, { scaleX: 1, duration: 0.9, ease: 'power3.inOut', opacity: 1 })
       .to(logo, { y: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }, '-=0.4')
       .to(tagline, { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }, '-=0.3')
-      .to({}, { duration: 1.2 });
+      .to({}, { duration: 1.2 })
+      .to([logo, line, tagline], {
+        opacity: 0,
+        y: -15,
+        duration: 0.5,
+        ease: 'power2.inOut',
+      })
+      .to([panel1, panel2], {
+        yPercent: -100,
+        duration: 1.1,
+        ease: 'power4.inOut',
+        stagger: 0.08,
+        onComplete,
+      }, '-=0.1');
 
     return () => { tl.kill(); };
   }, [onComplete]);

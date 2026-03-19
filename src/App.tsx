@@ -48,7 +48,7 @@ function App() {
       <Cursor />
 
       {/* Cinematic preloader */}
-      <Preloader onComplete={() => setPreloaderDone(true)} />
+      {!preloaderDone && <Preloader onComplete={() => setPreloaderDone(true)} />}
 
       {/* Main site — fades in after preloader */}
       <div
